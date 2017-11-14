@@ -1,0 +1,16 @@
+#!/bin/bash
+MINUTES_ARG=${1-5}
+MY_DIR=`dirname "${BASH_SOURCE[0]}"`
+
+_kotoed_user=${KOTOED_USER-"kotoed"}
+
+sudo -E -u ${_kotoed_user} $MY_DIR/do_update_kotoed &
+UPDATER_PID=$!
+
+$MY_DIR/kotoed_maintenance $MINUTES_ARG
+
+wait $UPDATER_PID
+
+sudo systemctl stop kotoed-vertx
+sudo systemctl start kotoed-vertx
+

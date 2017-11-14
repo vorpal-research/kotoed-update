@@ -1,0 +1,10 @@
+#!/bin/bash
+
+_kotoed_home=${KOTOED_HOME-"/home/kotoed/devel/kotoed"}
+
+pushd ${_kotoed_home}
+
+hg pull -u
+mvn clean package
+
+popd
