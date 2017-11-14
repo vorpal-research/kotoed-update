@@ -4,7 +4,7 @@ MY_DIR=`dirname "${BASH_SOURCE[0]}"`
 
 _kotoed_user=${KOTOED_USER-"kotoed"}
 
-sudo -E -u ${_kotoed_user} $MY_DIR/do_update_kotoed &
+sudo -E -H -u ${_kotoed_user} $MY_DIR/do_update_kotoed &
 UPDATER_PID=$!
 
 $MY_DIR/kotoed_maintenance $MINUTES_ARG
