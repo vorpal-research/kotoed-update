@@ -15,7 +15,7 @@ function minutes() {
 for ((i=$minutes_arg; i>=1; i--))
 do
     minutes $i
-    curl -d  "{\"id\": -$RANDOM, \"contents\": \"<span style=\\\"color: red;\\\">Kotoed is going down for maintenance in ${_minutes_result}! <br/> Please finish all you work. <br/> We will be back ${back_arg}.</span>\"}" http://localhost:9000/debug/eventbus/kotoed.api.notification.push.broadcast.render\?publish\=true
+    curl -d  "{\"id\": -$RANDOM, \"contents\": \"<span style=\\\"color: red;\\\">Kotoed is going down for maintenance in ${_minutes_result}! <br/> Please finish all your work. <br/> We will be back ${back_arg}.</span>\"}" http://localhost:9000/debug/eventbus/kotoed.api.notification.push.broadcast.render\?publish\=true
     sleep 60
 done
 
