@@ -4,7 +4,7 @@ _kotoed_home=${KOTOED_HOME-"/home/kotoed/devel/kotoed"}
 
 pushd ${_kotoed_home}
 
-hg pull -u
+git pull
 mvn clean package
 
 popd
